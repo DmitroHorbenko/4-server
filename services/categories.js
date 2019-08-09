@@ -1,15 +1,15 @@
 const Category = require('../models/category')
-async function getAll() {
-    const categories = await Category.find({})
-    return categories
-}
 
-async function create(category) {
-    const data = await Category.create(category)
-    return data
-}
+const getAll = (category) => Category.find({})
+const create = (category) => Category.create(category)
+const read = (id) => Category.findById(id)
+const update = ({_id, ...rest}) => Category.update({_id}, rest)
+const remove = (id) => Category.findByIdAndDelete(id)
 
 module.exports = {
     getAll,
-    create
+    create,
+    update,
+    read,
+    remove
 }
