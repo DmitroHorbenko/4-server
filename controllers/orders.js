@@ -1,7 +1,7 @@
 const  orderService = require('../services/orders')
 
 async function getAll(req, res) {
-    const data = await userService.getAll()
+    const data = await orderService.getAll()
     res.json(data)
 }
 
